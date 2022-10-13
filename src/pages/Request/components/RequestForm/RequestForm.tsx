@@ -15,10 +15,15 @@ import {
 	Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useSelector, useDispatch } from "react-redux";
 
 import cities from "../../../../utils/jsonData/cities.json";
 import sources from "../../../../utils/jsonData/sources.json";
 import { REQUEST_VALID_SCHEMA } from "../../../../utils";
+import { IRootState } from "../../../../store/reducers";
+import { useAppSelector } from "../../../../hooks/reduxHooks/reduxHooks";
+import { fetchRequest } from "../../../../store/request/actions";
+import FormPhoneField from "../../../../components/phone/phone";
 
 const StyledRequestForm = styled.div`
 	width: 440px;
@@ -40,7 +45,10 @@ const initialValues = {
 	recipient: "",
 };
 
-function RequestForm() {
+const RequestForm = () => {
+	const test = useAppSelector((state) => state.RequestReducer);
+	console.log(test);
+
 	return (
 		<StyledRequestForm>
 			<Formik
@@ -48,6 +56,7 @@ function RequestForm() {
 				validationSchema={REQUEST_VALID_SCHEMA}
 				onSubmit={async (values) => {
 					console.log(values);
+					fetchRequest(true);
 				}}
 			>
 				{({ values, errors, isValid, dirty }) => (
@@ -60,7 +69,7 @@ function RequestForm() {
 							</Grid>
 							<Grid item xs={6}>
 								<FormControl fullWidth>
-									<Field component={FormTextField} name="number" label="Номер телефона" />
+									<Field component={FormPhoneField} name="number" label="Номер телефона" />
 								</FormControl>
 							</Grid>
 							<Grid item xs={6}>
@@ -121,6 +130,6 @@ function RequestForm() {
 			</Formik>
 		</StyledRequestForm>
 	);
-}
+};
 
 export default RequestForm;
