@@ -1,9 +1,8 @@
 import { useCallback } from "react";
 import { fieldToTextField, TextFieldProps } from "formik-mui";
-
 import MuiTextField from "@mui/material/TextField";
 
-const RequiredTextField = (props: TextFieldProps) => {
+const FormTextField = (props: TextFieldProps) => {
 	const {
 		form: { setFieldValue },
 		field: { name },
@@ -15,7 +14,7 @@ const RequiredTextField = (props: TextFieldProps) => {
 		},
 		[setFieldValue, name]
 	);
-	return <MuiTextField {...fieldToTextField(props)} onChange={onChange} required />;
+	return <MuiTextField {...fieldToTextField(props)} onChange={onChange} />;
 };
 
-export default RequiredTextField;
+export default FormTextField;

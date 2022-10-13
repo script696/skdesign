@@ -26,7 +26,7 @@ const StyledParagraph = styled.p`
 	all: unset;
 `;
 
-function RequestLeftCol() {
+function RequestTextContent() {
 	return (
 		<StyledRequestLeftCol>
 			<StyledLogo src={logo} />
@@ -51,4 +51,4 @@ function RequestLeftCol() {
 	);
 }
 
-export default RequestLeftCol;
+export default RequestTextContent;

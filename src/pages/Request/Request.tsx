@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
-import RequestLeftCol from "./components/RequestLeftCol/RequestLeftCol";
-import RequestRightCol from "./components/RequestRightCol/RequestRightCol";
+import RequestTextContent from "./components/RequestTextContent/RequestTextContent";
+import RequestForm from "./components/RequestForm/RequestForm";
+import { Grid } from "@mui/material";
 
 const StyledRequest = styled.section`
 	position: relative;
@@ -17,8 +18,14 @@ const StyledRequest = styled.section`
 function Request() {
 	return (
 		<StyledRequest>
-			<RequestLeftCol />
-			<RequestRightCol />
+			<Grid container rowSpacing={2.5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+				<Grid item xs={8}>
+					<RequestTextContent />
+				</Grid>
+				<Grid item xs={4}>
+					<RequestForm />
+				</Grid>
+			</Grid>
 		</StyledRequest>
 	);
 }
