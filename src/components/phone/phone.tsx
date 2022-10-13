@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { ChangeEvent, useCallback } from "react";
 import InputMask from "react-input-mask";
 import { fieldToTextField, TextFieldProps } from "formik-mui";
 import MuiTextField from "@mui/material/TextField";
@@ -9,7 +9,7 @@ const FormPhoneField = (props: TextFieldProps) => {
 		field: { name },
 	} = props;
 	const onChange = useCallback(
-		(e: any) => {
+		(e: ChangeEvent<HTMLInputElement>) => {
 			const { value } = e.target;
 			setFieldValue(name, value ? value.toUpperCase() : "");
 		},

@@ -1,9 +1,11 @@
 import { Action, ActionType } from "./actionTypes";
-const initialState: any = {
+import { IRequestReducer } from "./types";
+
+const INIT_STATE: IRequestReducer = {
 	isPreloader: false,
 };
 
-const RequestReducer = (state = initialState, action: Action): any => {
+const RequestReducer = (state = INIT_STATE, action: Action) => {
 	switch (action.type) {
 		case ActionType.LOAD_REQUEST:
 			return {

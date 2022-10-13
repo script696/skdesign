@@ -1,14 +1,15 @@
-import { put, call, takeEvery, select } from "redux-saga/effects";
+import { put, call, takeEvery, } from "redux-saga/effects";
 
-import { ActionType } from "./actionTypes";
+import { ActionType, IFetchRequest } from "./actionTypes";
 import { loadJudicialCases } from "./actions";
 import RequestService from "./sevices";
+import { IfetchRequestData } from "./types";
 
-function* fetchRrequest({ payload: { values, resetForm } }: any): any {
+function* fetchRrequest({ payload: { values, resetForm } }: IFetchRequest) {
 	yield put(loadJudicialCases(true));
 	try {
-		const response = yield call(RequestService.sendFakeRequest, values);
-		const data = JSON.parse(response);
+		const response: IfetchRequestData = yield call(RequestService.sendFakeRequest, values);
+		const data = JSON.parse(`${response}`);
 		console.log(data);
 		resetForm();
 	} catch (error) {

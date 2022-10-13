@@ -12,6 +12,10 @@ const StyledRequestLeftCol = styled.div`
 `;
 const StyledTitle = styled.h2`
 	all: unset;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 150%;
+	color: #353238;
 `;
 const StyledContentColumn = styled.div`
 	max-width: 940px;
@@ -24,6 +28,13 @@ const StyledLogo = styled.img`
 `;
 const StyledParagraph = styled.p`
 	all: unset;
+	color: #353238;
+	font-size: 14px;
+	line-height: 150%;
+`;
+const StyledLink = styled.a`
+	all: unset;
+	color: #0086a8;
 `;
 
 function RequestTextContent() {
@@ -41,10 +52,15 @@ function RequestTextContent() {
 					сфере создания и продаж современной, качественной, удобной, функциональной и эксклюзивной мебели.
 				</StyledParagraph>
 				<StyledParagraph>
-					Ознакомиться с проектами можете в нашем портфолио. Если Вы оформляете интерьеры жилых или
-					коммерческих помещений — мы с радостью поможем Вам: составим уникальные условия сотрудничества,
-					предоставим 3D модели (уточняйте у менеджеров) и разработаем коммерческое предложение к Вашему
-					проекту или изображениям.
+					Ознакомиться с проектами можете в нашем{" "}
+					<span>
+						<StyledLink href="https://github.com/script696?tab=repositories" target="_blank">
+							портфолио
+						</StyledLink>
+					</span>
+					. Если Вы оформляете интерьеры жилых или коммерческих помещений — мы с радостью поможем Вам:
+					составим уникальные условия сотрудничества, предоставим 3D модели (уточняйте у менеджеров) и
+					разработаем коммерческое предложение к Вашему проекту или изображениям.
 				</StyledParagraph>
 			</StyledContentColumn>
 		</StyledRequestLeftCol>

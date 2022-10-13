@@ -1,11 +1,13 @@
-const fakeAPI = (data: any) => {
+import { IfetchRequestData } from "./types";
+
+const fakeAPI = (data: IfetchRequestData) => {
 	return new Promise((resolve, reject) => {
-		setTimeout(() => resolve(JSON.stringify(data)), 4 * 1000);
+		setTimeout(() => resolve(JSON.stringify(data)), 2 * 1000);
 	});
 };
 
 export default class RequestService {
-	static sendFakeRequest(data: any): Promise<any> {
+	static sendFakeRequest(data: IfetchRequestData) {
 		return fakeAPI(data);
 	}
 }
