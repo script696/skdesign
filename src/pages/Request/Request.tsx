@@ -5,10 +5,12 @@ import RequestRightCol from "./components/RequestRightCol/RequestRightCol";
 const StyledRequest = styled.section`
 	position: relative;
 	height: 100%;
-	width: 100%;
+	max-width: 1440px;
+	margin: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	gap: 60px;
 	background: #fff;
 `;
 

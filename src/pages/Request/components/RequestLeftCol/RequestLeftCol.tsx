@@ -3,15 +3,15 @@ import logo from "../../../../assets/images/sk-design-logo.svg";
 
 const StyledRequestLeftCol = styled.div`
 	position: relative;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	height: 100%;
+	gap: 40px;
+	align-items: flex-start;
 `;
 const StyledTitle = styled.h2`
 	all: unset;
-	margin-bottom: 40px;
 `;
 const StyledContentColumn = styled.div`
 	max-width: 940px;
