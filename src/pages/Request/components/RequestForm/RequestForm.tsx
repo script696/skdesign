@@ -21,9 +21,10 @@ import cities from "../../../../utils/jsonData/cities.json";
 import sources from "../../../../utils/jsonData/sources.json";
 import { REQUEST_VALID_SCHEMA } from "../../../../utils";
 import { IRootState } from "../../../../store/reducers";
-import { useAppSelector } from "../../../../hooks/reduxHooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/reduxHooks/reduxHooks";
 import { fetchRequest } from "../../../../store/request/actions";
 import FormPhoneField from "../../../../components/phone/phone";
+import { LoadingButton } from "@mui/lab";
 
 const StyledRequestForm = styled.div`
 	width: 440px;
@@ -46,17 +47,16 @@ const initialValues = {
 };
 
 const RequestForm = () => {
-	const test = useAppSelector((state) => state.RequestReducer);
-	console.log(test);
+	const { isPreloader } = useAppSelector((state) => state.RequestReducer);
+	const dispatch = useAppDispatch();
 
 	return (
 		<StyledRequestForm>
 			<Formik
 				initialValues={initialValues}
 				validationSchema={REQUEST_VALID_SCHEMA}
-				onSubmit={async (values) => {
-					console.log(values);
-					fetchRequest(true);
+				onSubmit={async (values, { resetForm }) => {
+					dispatch(fetchRequest({ values, resetForm }));
 				}}
 			>
 				{({ values, errors, isValid, dirty }) => (
@@ -119,9 +119,15 @@ const RequestForm = () => {
 							</Grid>
 							<Grid item xs={12}>
 								<FormControl fullWidth>
-									<Button type="submit" variant="contained" color="primary" disabled={!dirty || !isValid}>
-										Отправить заявку
-									</Button>
+									<LoadingButton
+										loading={isPreloader}
+										type="submit"
+										variant="contained"
+										color="primary"
+										disabled={!dirty || !isValid}
+									>
+										{!isPreloader && "Отправить заявку"}
+									</LoadingButton>
 								</FormControl>
 							</Grid>
 						</Grid>

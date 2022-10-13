@@ -2,15 +2,19 @@ import { put, call, takeEvery, select } from "redux-saga/effects";
 
 import { ActionType } from "./actionTypes";
 import { loadJudicialCases } from "./actions";
+import RequestService from "./sevices";
 
-function* fetchRrequest({ payload }: any): any {
-	console.log("hi");
+function* fetchRrequest({ payload: { values, resetForm } }: any): any {
+	yield put(loadJudicialCases(true));
 	try {
-		console.log("fetch");
-		yield put(loadJudicialCases(true));
-		yield;
+		const response = yield call(RequestService.sendFakeRequest, values);
+		const data = JSON.parse(response);
+		console.log(data);
+		resetForm();
 	} catch (error) {
 		yield;
+	} finally {
+		yield put(loadJudicialCases(false));
 	}
 }
 

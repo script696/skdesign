@@ -1,10 +1,11 @@
 import { ActionType } from "./actionTypes";
 
-export const loadJudicialCases = (areaId: boolean): any => ({
+export const loadJudicialCases = (cond: boolean): any => ({
 	type: ActionType.LOAD_REQUEST,
-	payload: areaId,
+	payload: cond,
 });
-export const fetchRequest = (areaId: boolean): any => ({
+
+export const fetchRequest = (data: any): any => ({
 	type: ActionType.FETCH_REQUEST,
-	payload: areaId,
+	payload: data,
 });
