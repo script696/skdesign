@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/skdesign/static/css/main.6ee3d049.css",
+    "main.js": "/skdesign/static/js/main.8b4b85a8.js",
+    "static/media/sk-design-logo.svg": "/skdesign/static/media/sk-design-logo.f09814afc6c4c44b9244cb003253e1a6.svg",
+    "index.html": "/skdesign/index.html",
+    "main.6ee3d049.css.map": "/skdesign/static/css/main.6ee3d049.css.map",
+    "main.8b4b85a8.js.map": "/skdesign/static/js/main.8b4b85a8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ee3d049.css",
+    "static/js/main.8b4b85a8.js"
+  ]
+}
