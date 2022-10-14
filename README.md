@@ -76,7 +76,8 @@ JSON sources.json
 
 - React 
 - TypeScript
-- Styled Components 
+- Styled Components
+- Material UI
 - Redux 
 - Saga
 - Figma
