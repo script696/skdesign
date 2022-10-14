@@ -14,6 +14,7 @@ const FormTextField = (props: TextFieldProps) => {
 		},
 		[setFieldValue, name]
 	);
+
 	return <MuiTextField {...fieldToTextField(props)} onChange={onChange} />;
 };
 

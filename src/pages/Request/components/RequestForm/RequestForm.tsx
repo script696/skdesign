@@ -1,16 +1,16 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components/macro";
 import { Field, Form, Formik } from "formik";
 import { Accordion, AccordionDetails, AccordionSummary, FormControl, Grid, Typography } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
-import { FormDropDown, FormTextField } from "../../../../components";
+import { FormDropDown, FormTextField, FormPhoneField } from "../../../../components/index";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import cities from "../../../../utils/jsonData/cities.json";
 import sources from "../../../../utils/jsonData/sources.json";
 import { REQUEST_VALID_SCHEMA } from "../../../../utils";
-import { useAppDispatch, useAppSelector } from "../../../../hooks/reduxHooks/reduxHooks";
+import { useAppSelector } from "../../../../hooks/reduxHooks/reduxHooks";
 import { fetchRequest } from "../../../../store/request/actions";
-import FormPhoneField from "../../../../components/phone/phone";
-import { useDispatch } from "react-redux";
+import { IRequestForm } from "./RequestFormTypes";
 
 const StyledRequestForm = styled.div`
 	width: 440px;
@@ -21,7 +21,7 @@ const StyledRequestForm = styled.div`
 	flex-direction: column;
 `;
 
-const initialValues = {
+const INIT_STATE: IRequestForm = {
 	name: "",
 	number: "",
 	email: "",
@@ -39,7 +39,7 @@ const RequestForm = () => {
 	return (
 		<StyledRequestForm>
 			<Formik
-				initialValues={initialValues}
+				initialValues={INIT_STATE}
 				validationSchema={REQUEST_VALID_SCHEMA}
 				onSubmit={async (values, { resetForm }) => {
 					dispatch(fetchRequest(values, resetForm));

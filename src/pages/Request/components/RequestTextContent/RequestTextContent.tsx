@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import logo from "../../../../assets/images/sk-design-logo.svg";
 
-const StyledRequestLeftCol = styled.div`
+const StyledTextContent = styled.div`
 	position: relative;
 	height: 100%;
 	display: flex;
@@ -39,8 +39,8 @@ const StyledLink = styled.a`
 
 function RequestTextContent() {
 	return (
-		<StyledRequestLeftCol>
-			<StyledLogo src={logo} />
+		<StyledTextContent>
+			<StyledLogo src={logo} alt="SKDesign logo" />
 			<StyledTitle>Оставьте заявку и станьте частью нашей команды</StyledTitle>
 			<StyledContentColumn>
 				<StyledParagraph>
@@ -63,7 +63,7 @@ function RequestTextContent() {
 					разработаем коммерческое предложение к Вашему проекту или изображениям.
 				</StyledParagraph>
 			</StyledContentColumn>
-		</StyledRequestLeftCol>
+		</StyledTextContent>
 	);
 }
 

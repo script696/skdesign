@@ -1,4 +1,4 @@
-import { put, call, takeEvery, } from "redux-saga/effects";
+import { put, call, takeEvery } from "redux-saga/effects";
 
 import { ActionType, IFetchRequest } from "./actionTypes";
 import { loadJudicialCases } from "./actions";

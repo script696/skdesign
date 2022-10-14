@@ -1,6 +1,5 @@
 import React from "react";
 import { Select } from "formik-mui";
-import sources from "@utils/jsonData/sources.json";
 import { MenuItem } from "@mui/material";
 import { Field } from "formik";
 
@@ -11,7 +10,7 @@ type IFormDropDown = {
 	multiple?: boolean;
 };
 
-function FormDropDown({ label, name, data, multiple = false }: IFormDropDown): JSX.Element {
+function FormDropDown({ label, name, data, multiple = false }: IFormDropDown) {
 	return (
 		<Field component={Select} label={label} name={name} multiple={multiple} inputProps={{ name, id: name }}>
 			{data?.map(({ id, name }) => (

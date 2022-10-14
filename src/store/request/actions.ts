@@ -1,4 +1,4 @@
-import { Action, ActionType } from "./actionTypes";
+import { ActionType } from "./actionTypes";
 import { IfetchRequestData } from "./types";
 
 export const loadJudicialCases = (cond: boolean) => ({
